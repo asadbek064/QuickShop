@@ -1,5 +1,3 @@
-package Pages;
-
 public class OrderHistoryState implements TerminalState {
     private final TerminalPage orderHistoryPage = new OrderHistoryPage();
 
@@ -10,7 +8,7 @@ public class OrderHistoryState implements TerminalState {
 
     @Override
     public void handleInput(String input) {
-        if (input.equals("home")) {
+        if (input.equals("1")) {
             TerminalManager.setCurrentState(new HomePageState());
         }
     }

@@ -1,5 +1,3 @@
-package Pages;
-
 public class ProductPage implements TerminalPage {
     @Override
     public  void display() {

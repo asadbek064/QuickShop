@@ -1,5 +1,3 @@
-package Pages;
-
 public class ProductPageState  implements TerminalState {
     private final TerminalPage productPage = new ProductPage();
 
