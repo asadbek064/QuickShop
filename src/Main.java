@@ -1,16 +1,20 @@
 
 public class Main {
     public static void main(String[] args) {
-        Cart myCart = new Cart();
-        Inventory inventory = new Inventory(myCart);
+        Inventory inventory = Inventory.getInstance();
+        Cart myCart = new Cart(inventory);
         inventory.displayItems();
-        inventory.addToCart("Ketchup");
-        inventory.addToCart("Ketchup");
-        inventory.addToCart("Ketchup");
-        inventory.addToCart("Mayo");
-        inventory.addToCart("Pants");
-        inventory.removeFromCart("Mayo");
+        myCart.addToCart("Ketchup");
+        myCart.addToCart("Ketchup");
+        myCart.addToCart("Ketchup");
+        myCart.addToCart("Mayo");
+        myCart.addToCart("Pants");
+        myCart.removeFromCart("Mayo");
         myCart.checkout();
+        //demonstrates one instance of inventory being shared with all users
+        Cart user2Cart = new Cart(inventory);
+        user2Cart.addToCart("Ketchup");
+        user2Cart.checkout();
 
     }
 }
