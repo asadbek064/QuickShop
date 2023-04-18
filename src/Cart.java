@@ -7,10 +7,12 @@ public class Cart implements Subject{
     //Items -> # of items in cart
     HashMap<Observer,Integer> items;
     Double total;
+    private static Inventory instance;
 
-    public Cart(){
+    public Cart(Inventory init){
         items = new HashMap<>();
         total = 0.0;
+        instance = init;
     }
 
 
@@ -46,11 +48,22 @@ public class Cart implements Subject{
         for(Observer o : items.keySet())
             o.update(items.get(o));
     }
+
+    public void addToCart(String nameOfItem){
+        register(instance.getItemsList().get(nameOfItem));
+    }
+
+    public void removeFromCart(String nameOfItem){
+        unregister(instance.getItemsList().get(nameOfItem));
+    }
+
+
+
     //notify items to update their inventory
     public void checkout(){
         notifyObserver();
         System.out.println("--------Check Out-------");
         BigDecimal accuratePrice = new BigDecimal(total).round(new MathContext(3));
-        System.out.println("The total cost is: $" + accuratePrice);
+        System.out.println("The total cost is: $" + accuratePrice + "\n");
     }
 }
