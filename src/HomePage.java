@@ -2,7 +2,7 @@
 public class HomePage implements TerminalPage {
     String header = "Welcome to QuickShop\n";
     String navView = "Navigation:" + "\t"+
-            "(1):Order History Page" + "\t"+ "(2):Search product + (3): Select Item ex:3 1 \n";
+            "(1):Order History Page" + "\t"+ "(2):Search product + (3): Select Item (enter name of product) \n";
 
     // get global cart & inventory instance
     Cart myCart = Cart.getInstance();
@@ -10,7 +10,6 @@ public class HomePage implements TerminalPage {
     @Override
     public  void display() {
         TerminalManager.clearScreen();
-
 
         System.out.println(header);
 
