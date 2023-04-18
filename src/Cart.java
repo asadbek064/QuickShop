@@ -9,12 +9,28 @@ public class Cart implements Subject{
     Double total;
     private static Inventory instance;
 
-    public Cart(Inventory init){
+    private static Cart myCart = null;
+
+   /* public Cart(Inventory init){
         items = new HashMap<>();
         total = 0.0;
         instance = init;
+    }*/
+
+    //
+    public Cart() {
+        Inventory inventory = new Inventory();
+        items = new HashMap<>();
+        total = 0.0;
+        instance = inventory;
     }
 
+    public static Cart getInstance() {
+        if (myCart == null) {
+            myCart = new Cart();
+        }
+        return myCart;
+    }
 
     //adds item to cart
     @Override

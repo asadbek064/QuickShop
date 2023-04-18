@@ -6,7 +6,7 @@ public class Inventory{
     private static Inventory instance;
     private Map<String, Items> itemsList;
 
-    private Inventory() {
+    protected Inventory() {
         itemsList = new HashMap<>();
         itemsList.put("Ketchup",new Items("Ketchup", 4.0, 50));
         itemsList.put("Mayo",new Items("Mayo", 3.70, 25));
@@ -14,6 +14,7 @@ public class Inventory{
         itemsList.put("Pants",new Items("Pants", 59.99, 80));
 
     }
+
 
     public static synchronized Inventory getInstance() {
         if (instance == null) {
