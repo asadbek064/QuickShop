@@ -11,24 +11,13 @@ public class Cart implements Subject{
 
     private static Cart myCart = null;
 
-   /* public Cart(Inventory init){
+    public Cart(Inventory init){
         items = new HashMap<>();
         total = 0.0;
         instance = init;
-    }*/
-
-    //
-    public Cart() {
-        Inventory inventory = new Inventory();
-        items = new HashMap<>();
-        total = 0.0;
-        instance = inventory;
     }
 
     public static Cart getInstance() {
-        if (myCart == null) {
-            myCart = new Cart();
-        }
         return myCart;
     }
 

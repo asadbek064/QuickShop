@@ -7,6 +7,10 @@ public class ProductDetailsPage implements TerminalPage {
         this.itemName = itemName;
     }
 
+    public ProductDetailsPage() {
+
+    }
+
     @Override
     public void display() {
         page.display();

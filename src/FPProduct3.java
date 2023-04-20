@@ -1,3 +1,4 @@
+/*
 public class Product3 implements Product {
     private final String name = "Product3";
     private final String description = "This is Product 3.";
@@ -17,4 +18,4 @@ public class Product3 implements Product {
     public double getPrice() {
         return price;
     }
-}
+}*/

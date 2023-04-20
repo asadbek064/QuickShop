@@ -18,4 +18,8 @@ public class DiscountDecorator extends ProductDetailsPage {
         BigDecimal accuratePrice = new BigDecimal(price).round(new MathContext(3));
         System.out.println("Discounted price: $" + accuratePrice);
     }
+
+    private double getPrice() {
+        return  1;
+    }
 }

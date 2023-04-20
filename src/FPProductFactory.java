@@ -1,3 +1,4 @@
+/*
 public class ProductFactory {
     public static Product createProduct(String productName) {
         if (productName.equalsIgnoreCase("quit")) {
@@ -19,4 +20,4 @@ public class ProductFactory {
             return null;
         }
     }
-}
+}*/
